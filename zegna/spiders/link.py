@@ -11,6 +11,7 @@ class LinkSpider(scrapy.Spider):
     start_urls = ["https://storelocator-webservice.zegna.com/services/V8/storeList.json?point_position=42.8400314,-85.4780751&r=200000000&displayCountry=IN&language=EN"]
 
     def parse(self, response):
+        Linkextractor()
         jsn = json.loads(response.text)
         for j in jsn:
             item = storeLinksItem()
